@@ -1,4 +1,66 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage</title>
+	<style>
+
+        .fruitBox {
+            background-color: coral;
+            border: 2px dotted orange;
+            width: 30%;
+            padding: 10px;
+            font-size: large;
+            margin: 2px;
+        }
+
+        .flexContainer {
+            display: flex;
+            /*flex-direction: row;*/
+            flex-wrap: wrap;
+            border: 1px solid red;
+            justify-content: space-between; /* horizontally */
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 30% 50% 20%;
+            grid-template-rows: 100px 150px;
+            border: 1px solid red;
+
+        }
+
     
+        @media (max-width: 600px) {
+            .fruitBox {
+                background-color: goldenrod;
+                border: 2px dotted green;
+            }
+        }
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+        <div class="fruitBox">
+            banana
+        </div>
+        <div class="fruitBox"> 
+            apple
+        </div>
+        <div class="fruitBox">
+            pear
+        </div>
+
+        <div class="fruitBox">
+            pineapple 
+        </div>
+
+	</div>
+
+</body>
 </html>
