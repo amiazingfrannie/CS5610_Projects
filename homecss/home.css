@@ -1,0 +1,173 @@
+/* Content design */
+.homepage-content {
+    position: relative;
+    top: 10vh;
+    height: 100%;  
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    width: 80vw;
+}
+
+.homepage-content h1, h2 {
+    color: #F26A4B;
+}
+
+.homepage-content ul {
+    padding-left: 10px;
+}
+
+.homepage-content li {
+    color: #FA7F08;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.homepage-content p {
+    color: #34495e;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.work-section h2 {
+    grid-area: title;
+    text-align: left; 
+    padding-top: 20px;
+    margin: 0;
+}
+
+/* Sections */
+.about-me-section, .edu-section, .ta-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align items to the top */
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.work-section {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "tiktok-pic tiktok-text"
+        "ibm-pic ibm-text";
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 10px; 
+    text-align: left;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.tiktok-text {
+    grid-area: tiktok-text;
+}
+
+.tiktok-pic {
+    padding-top: 50px;
+    grid-area: tiktok-pic;
+}
+
+.ibm-text {
+    grid-area: ibm-text;
+}
+
+.ibm-pic {
+    padding-top: 50px;
+    grid-area: ibm-pic;
+}
+
+
+.about-me-content, .work-content, .edu-content, .ta-content {
+    flex: 1;  /* Allows the text content to take the remaining width */
+    flex-wrap: nowrap;
+    text-align: left; 
+}
+
+.about-me-content li{
+    color: #34495e;
+    font-size: 16px;
+}
+
+/* Add pics */
+.profile-pic {
+    width: 200px;  
+    height: 200px; 
+    border-radius: 50%;  /* Makes the image round */
+    object-fit: cover; 
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.square-pic {
+    width: 200px;  
+    height: 200px; 
+    object-fit: cover;  
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .homepage-content img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .homepage-content {
+        align-items: center;
+        text-align: left;
+        margin-right: 0;
+    }
+
+    .homepage-content h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .homepage-content li {
+        font-size: 14px;
+        font-weight: bolder;
+    }
+
+    .homepage-content p {
+        font-size: 14px;
+    }
+
+    .homepage-content .about-me-section li {
+        font-size: 14px;
+    }
+
+    .homepage-content .work-section {
+        grid-template-areas:
+            "title"
+            "tiktok-pic"
+            "tiktok-text"
+            "ibm-pic"
+            "ibm-text";
+        grid-template-columns: 1fr;
+    }
+
+    .homepage-content .work-section h2 {
+        text-align: center;
+    }
+
+    .homepage-content .work-section .tiktok-pic, 
+    .homepage-content .work-section .ibm-pic {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .homepage-content .edu-section {
+        padding-bottom: 30px;
+    }
+    
+    .homepage-content .about-me-content,
+    .homepage-content .edu-content,
+    .homepage-content .work-content,
+    .homepage-content .ta-content {
+        padding-top: 10px;
+        min-width: 80vw;
+    }
+}

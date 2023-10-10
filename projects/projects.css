@@ -1,0 +1,45 @@
+
+/* projects page(add links later) */
+.projects-container {
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    flex-basis: calc(33.333% - 40px);  /* For 3 cards in a row; subtracting the gap */
+    background-color: rgb(246, 246, 224);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    overflow: hidden;  /* To ensure the image conforms to card's border radius */
+}
+
+.project-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.project-card h2 {
+    padding: 10px;
+    color: #F24405;
+}
+
+.project-card li {
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Mobile view: 1 card per row */
+@media (max-width: 768px) {
+    .project-card {
+        flex-basis: 100%;
+    }
+}
