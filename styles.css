@@ -1,0 +1,531 @@
+/* relative path! */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('font/YatraOne-Regular.ttf') format('truetype');
+} 
+
+body, html {
+    font-family: 'CustomFont';
+    margin: 0;
+    padding-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    height: 6vh;
+    width: 100%;
+    background-color: #348888;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px #F26A4B;
+    z-index: 1000;
+}
+
+#navbar span {
+    margin-right: 40px;
+    margin-left: 40px;
+    font-size: 28px;
+    color: white;
+}
+
+#navbar span a {
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+}
+
+#navbar span a:hover{
+    color: #FA7F08;
+    transition: color 0.3s ease;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+    font-size: 24px;
+}
+
+.desktop-nav a:hover {
+    color: #FA7F08;
+    font-weight: 200;
+}
+
+.desktop-nav a.active {
+    font-weight: 200;
+    color: #F24405;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.mobile-nav a {
+    font-size: 14px;
+}
+
+.mobile-nav .menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+.mobile-nav .menu-icon:hover{
+    color: #F24405;
+}
+
+.mobile-nav .menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px; /* Adjust as per the navbar height */
+    right: 20px; 
+    background-color:white;
+    border: 1px solid #22BABB;
+    width: 80px;
+}
+
+.mobile-nav .menu-dropdown a {
+    display: block;
+    padding: 5px;
+    color:#F24405;
+    text-decoration: none;
+}
+
+.mobile-nav .menu-icon:hover + .menu-dropdown,
+.mobile-nav .menu-dropdown:hover {
+    display: block;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: flex;
+    }
+
+    .homepage-content img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .homepage-content {
+        align-items: center;
+        text-align: left;
+        margin-right: 0;
+    }
+
+    .homepage-content h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .homepage-content li {
+        font-size: 14px;
+        font-weight: bolder;
+    }
+
+    .homepage-content p {
+        font-size: 14px;
+    }
+
+    .homepage-content .about-me-section li {
+        font-size: 14px;
+    }
+
+    .homepage-content .work-section {
+        grid-template-areas:
+            "title"
+            "tiktok-pic"
+            "tiktok-text"
+            "ibm-pic"
+            "ibm-text";
+        grid-template-columns: 1fr;
+    }
+
+    .homepage-content .work-section h2 {
+        text-align: center;
+    }
+
+    .homepage-content .work-section .tiktok-pic, 
+    .homepage-content .work-section .ibm-pic {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .homepage-content .edu-section {
+        padding-bottom: 30px;
+    }
+    
+    .homepage-content .about-me-content,
+    .homepage-content .edu-content,
+    .homepage-content .work-content,
+    .homepage-content .ta-content {
+        padding-top: 10px;
+        min-width: 80vw;
+    }
+}
+
+/* Content design */
+.homepage-content {
+    position: relative;
+    top: 10vh;
+    height: 100%;  
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    width: 80vw;
+}
+
+.homepage-content h1, h2 {
+    color: #F26A4B;
+}
+
+.homepage-content ul {
+    padding-left: 10px;
+}
+
+.homepage-content li {
+    color: #FA7F08;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.homepage-content p {
+    color: #34495e;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.work-section h2 {
+    grid-area: title;
+    text-align: left; 
+    padding-top: 20px;
+    margin: 0;
+}
+
+/* Sections */
+.about-me-section, .edu-section, .ta-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align items to the top */
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.work-section {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "tiktok-pic tiktok-text"
+        "ibm-pic ibm-text";
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 10px; 
+    text-align: left;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.tiktok-text {
+    grid-area: tiktok-text;
+}
+
+.tiktok-pic {
+    padding-top: 50px;
+    grid-area: tiktok-pic;
+}
+
+.ibm-text {
+    grid-area: ibm-text;
+}
+
+.ibm-pic {
+    padding-top: 50px;
+    grid-area: ibm-pic;
+}
+
+
+.about-me-content, .work-content, .edu-content, .ta-content {
+    flex: 1;  /* Allows the text content to take the remaining width */
+    flex-wrap: nowrap;
+    text-align: left; 
+}
+
+.about-me-content li{
+    color: #34495e;
+    font-size: 16px;
+}
+
+/* Add pics */
+.profile-pic {
+    width: 200px;  
+    height: 200px; 
+    border-radius: 50%;  /* Makes the image round */
+    object-fit: cover; 
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.square-pic {
+    width: 200px;  
+    height: 200px; 
+    object-fit: cover;  
+}
+
+/* Highlight certain words */
+.highlight {
+    background-color: #9EF8EE; /* Highlight color */
+    color:#FA7F08;  /* Text color */
+    padding: 2px px;  /* Some padding for better appearance */
+}
+
+/* contact page */
+.contact-container {
+    position: relative;
+    top: 5vh; 
+    width: 60vw;
+    height: min-content;
+    margin: 100px auto;
+    background-color: #22BABB;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9EF8EE;
+    text-align: center;
+}
+
+.contact-container h1 {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    padding: 20px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.contact-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.contact-item a:hover {
+    color: #F24405;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+    .contact-container {
+        position: relative;
+        top: 10vh;
+        min-width: 80vw;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .contact-container h1 {
+        font-size: 2em;
+        padding: 20px;
+    }
+    
+    .contact-item {
+        padding: 0px;
+        margin: 10px;
+    }
+    
+    .contact-item img {
+        width: 30px;
+        height: 30px;
+        padding-bottom: 10px;
+    }
+    
+    .contact-item a {
+        font-size: 1em;
+    }
+
+}
+
+/* projects page(add links later) */
+.projects-container {
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    flex-basis: calc(33.333% - 40px);  /* For 3 cards in a row; subtracting the gap */
+    background-color: rgb(246, 246, 224);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    overflow: hidden;  /* To ensure the image conforms to card's border radius */
+}
+
+.project-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.project-card h2 {
+    padding: 10px;
+    color: #F24405;
+}
+
+.project-card li {
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Mobile view: 1 card per row */
+@media (max-width: 768px) {
+    .project-card {
+        flex-basis: 100%;
+    }
+}
+
+/* fun page */
+.funpage-content {
+    position: relative;
+    top: 10vh;
+    height: 100%;  
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    width: 80vw;
+}
+
+.logo-section {
+    min-width: 80vw;
+    height:max-content;
+    top: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #f7f7f7; /* Light grey background for emphasis */
+}
+
+.funpage-content h2 {
+    font-size: 2em;
+    color: #F24405;
+}
+
+.logo-section img {
+    width: 100px; /* Adjust as needed */
+    height: 100px;
+    border-radius: 50%;  /* Makes the image round */
+    object-fit: cover; 
+    margin: 0 10px; /* Gives space between logos */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-section img:hover {
+    transform: scale(1.1);
+}
+
+/* Hobby section styling */
+.hobbies {
+    position: relative;
+    width: 100%;
+    min-width: 80vw;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.hobby-section {
+    padding: 20px;
+    margin: 20px 0;
+    border-bottom: 2px solid #f0e8e0; /* Divider */
+}
+
+.hobby-section img {
+    width: 300px;
+    height: auto;
+    max-width: 100%; 
+    margin: 20px 0;
+}
+
+.hobby-section h2 {
+    color: #333;
+    text-align: center;
+}
+
+.hobby-section p {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) { 
+    .logo-section {
+        flex-direction: column;  /* Stack logos vertically */
+        align-items: center;  /* Center the logos */
+        gap: 20px;  /* Add space between logos */
+        padding-top: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hobby-section img {
+        max-width: 100%;  /* Ensure images are not wider than their container */
+        margin: 10px 0;  /* Adjust margin if needed */
+    }
+
+    .hobbies {
+        padding: 0px;
+        margin-top: 20px;
+    }
+
+    .hobby-section {
+        padding: 0px;  
+    }
+}

@@ -1,66 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Homepage</title>
-	<style>
-
-        .fruitBox {
-            background-color: coral;
-            border: 2px dotted orange;
-            width: 30%;
-            padding: 10px;
-            font-size: large;
-            margin: 2px;
-        }
-
-        .flexContainer {
-            display: flex;
-            /*flex-direction: row;*/
-            flex-wrap: wrap;
-            border: 1px solid red;
-            justify-content: space-between; /* horizontally */
-
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 30% 50% 20%;
-            grid-template-rows: 100px 150px;
-            border: 1px solid red;
-
-        }
-
-    
-        @media (max-width: 600px) {
-            .fruitBox {
-                background-color: goldenrod;
-                border: 2px dotted green;
-            }
-        }
-
-
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fran's Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-	<div class="container">
-        <div class="fruitBox">
-            banana
+    <div id="navbar">
+        <span>
+            <a href="index.html"><strong>Fran Fan Zhou</strong></a>
+        </span>
+    <!-- Desktop navigation -->
+        <div class="desktop-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="projects/index.html">Projects</a>
+            <a href="contact/index.html">Contact</a>
+            <a href="funpage/index.html">Fun Facts</a>
         </div>
-        <div class="fruitBox"> 
-            apple
+        
+        <!-- Mobile navigation -->
+        <div class="mobile-nav">
+            <div class="menu-icon">☰</div>
+            <div class="menu-dropdown">
+                <a href="index.html">Home</a>
+                <a href="projects/index.html">Projects</a>
+                <a href="contact/index.html">Contact</a>
+                <a href="funpage/index.html">Fun Facts</a>
+            </div>
         </div>
-        <div class="fruitBox">
-            pear
+    </div>
+    
+    <div class="homepage-content">
+
+        <div class="about-me-section">
+            <img src="pics/headshot.jpg" alt="Fran" class="profile-pic">
+            <div class="about-me-content">
+                <h2>Something about me:</h2>
+                <p>
+                    This is Francesca Fan Zhou, call me <span class="highlight">Fran</span>!
+                </p>
+                <ul>
+                    <li>
+                    Aspiring CS graduate student with 2-year professional experience in technical consulting;
+                    </li>
+                    <li>
+                    Motivated self-starter and fast learner, with outstanding abilities to identify problems and provide solutions for complex situations;
+                    </li>
+                    <li>
+                    Seeking a career change to a position involving software engineering!
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="fruitBox">
-            pineapple 
+        <div class="ta-section">
+            <div class="ta-content">
+                <h2>I'm a proud TA at:</h2>
+                <ul>
+                    <li>Northeastern University for CS5002 Discrete Structure</li>
+                    <p>
+                        •	Assisting professor with tasks as lectures, exams, and tutoring;
+                    </p>
+                    <p>
+                        •	Holding weekly office hour, and answering questions from student on Piazza to ensure proper understanding of the course material;
+                    </p>
+                </ul>
+            </div>
+            <img src="pics/neu.png" alt="NEU" class="square-pic">
+        </div>
+    
+        <div class="work-section">
+            <h2>Where I worked before:</h2>
+
+            <div class="work-content tiktok-pic">
+                <img src="pics/tiktok.png" alt="tt" class="square-pic">
+            </div>
+
+            <div class="work-content tiktok-text">
+                <ul>
+                    <li>TikTok: Software Engineer Intern</li>
+                    <p>
+                        •	Transitioned the invitation workflow from <span class="highlight">JavaScript/Typescript to Golang</span>, leading to improved code clarity and enhanced system stability. 
+                    </p>
+                    <p>
+                        •	Engineered a <span class="highlight">unified in-app notification platform</span> for H5 invitation dispatch to creators, centralizing template settings, modifications, approvals, invitation withdrawals, and notifications for both creators and operators. 
+                    </p>
+                    <p>
+                        •	Designed a batch send workflow, achieving a <span class="highlight">70% optimization in time efficiency</span>. 
+                    </p>
+                    <p>
+                        •	Fostered cross-functional collaborations with product managers and teams including Infrastructure, Magic(H5), Notice/Pivot, and others. 
+                    </p>
+                    <p>
+                        •	Utilized internal databases and SQL expertise to pinpoint and target specific users for invitation delivery. 
+                    </p>
+                    <p>
+                        •	Ensured robustness by designing and implementing unit tests, achieving a <span class="highlight">100% coverage rate</span> across all developed functions.
+                    </p>
+                </ul>
+            </div>
+
+            <div class="work-content ibm-pic">
+                <img src="pics/ibm.png" alt="ibm" class="square-pic">
+            </div>
+
+            <div class="work-content ibm-text">
+                <ul>
+                    <li>IBM: Technical Consultant</li>
+                    <p>
+                        •	Designed a customized web application (Core HR) based on users' demands, improving efficiency by reducing 30% of time spent for users;                    
+                    </p>
+                    <p>
+                        •	Led system implementation for overseas branches, migrated over 1 million personnel data into Core HR system, and shortened business process from 2-3 days to only 1-2 hours;   
+                    </p>
+                    <p>
+                        •	Implemented a data visualization platform on real-time personnel data for performance monitoring, helping HR performance team with decision-making and setting business goals;
+                    </p>
+                    <p>
+                        •	Teamed with developers on product design and testing, addressing users' needs into technical terms while presenting technical concerns back to users;
+                    </p>
+                    <p>
+                        •	Created test scripts containing all cases users may encounter in practice, arranged user training and testing for 1000+ users from 54 branches;
+                    </p>
+                    <p>
+                        •	Systemized dataflow among 4 other functions (e.g., Payroll/Recruiting, etc.) and Core HR, and implemented multi-level access control;
+                    </p>
+                </ul>
+            </div>
         </div>
 
-	</div>
+        <div class="edu-section">
+            <div class="edu-content">
+                <h2>I have these degrees:</h2>
+                <ul>
+                    <li>Master of Computer Science from Northeastern University</li>
+                    <p>Courseworks: Discrete Structure; Object-Oriented Design; Data Structures; Algorithms; Web Development</p>
+                    <li>Master of Finance from University of International Business and Economics</li>
+                    <p>Courseworks: Advanced Mathematics; Probability; Linear Algebra; Stochastic Processes; Economic Data Analysis with R</p>
+                </ul>
+            </div>
+            <img src="pics/master.png" alt="master" class="square-pic">
+        </div>
 
+    </div>
+    
+    
 </body>
 </html>
